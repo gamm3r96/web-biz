@@ -20,7 +20,7 @@ const loader = new THREE.GLTFLoader();
 let model;
 
 loader.load(
-    'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf', // Replace with your GLTF model URL
+    'https://www.foodandhome.co.za/wp-content/uploads/2024/08/pexels-taryn-elliott-5334886-1-scaled.jpg', // Replace with your GLTF model URL
     function (gltf) {
         model = gltf.scene;
         model.scale.set(0.5, 0.5, 0.5); // Adjust scale
