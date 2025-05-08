@@ -150,25 +150,137 @@ body {
     transform: translateY(-10px);
 }
 
+/* Dark Mode Base Styles */
+.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text for readability */
+}
+
+/* Header and Footer in Dark Mode */
+.dark-mode .header,
+.dark-mode .footer {
+    background: #1e1e1e; /* Slightly lighter than the main background */
+    color: #e0e0e0; /* Light text */
+}
+
+.dark-mode .header .logo {
+    color: #bb86fc; /* Accent color for branding */
+}
+
+.dark-mode .nav ul li a {
+    color: #bb86fc; /* Purple accent for navigation links */
+}
+
+.dark-mode .nav ul li a:hover {
+    color: #ffffff; /* Bright white on hover */
+}
+
+/* Hero Section in Dark Mode */
+.dark-mode .hero {
+    background: linear-gradient(135deg, #1b5e20, #0d47a1); /* Gradient with darker tones */
+    color: #ffffff; /* White text for contrast */
+}
+
+.dark-mode .hero-content h2 {
+    color: #ffffff; /* Bright white for headings */
+}
+
+.dark-mode .btn-primary {
+    background: #bb86fc; /* Purple button */
+    color: #121212; /* Dark text for contrast */
+    border: 1px solid #bb86fc; /* Subtle border */
+}
+
+.dark-mode .btn-primary:hover {
+    background: #9c27b0; /* Darker purple on hover */
+    border-color: #9c27b0;
+}
+
+/* How It Works Section in Dark Mode */
+.dark-mode .step {
+    background: #2c2c2c; /* Dark card background */
+    color: #e0e0e0; /* Light text */
+    border: 1px solid #333; /* Subtle border for separation */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Softer shadow */
+}
+
+.dark-mode .step h3 {
+    color: #bb86fc; /* Accent color for headings */
+}
+
+.dark-mode .step p {
+    color: #e0e0e0; /* Light text */
+}
+
+/* Pricing Section in Dark Mode */
+.dark-mode .plan {
+    background: #2c2c2c; /* Dark card background */
+    color: #e0e0e0; /* Light text */
+    border: 1px solid #333; /* Subtle border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Softer shadow */
+}
+
+.dark-mode .plan h3 {
+    color: #bb86fc; /* Accent color for headings */
+}
+
+.dark-mode .plan .price {
+    color: #bb86fc; /* Accent color for pricing */
+}
+
+.dark-mode .btn-secondary {
+    background: #bb86fc; /* Purple button */
+    color: #121212; /* Dark text for contrast */
+    border: 1px solid #bb86fc; /* Subtle border */
+}
+
+.dark-mode .btn-secondary:hover {
+    background: #9c27b0; /* Darker purple on hover */
+    border-color: #9c27b0;
+}
+
+/* Contact Form in Dark Mode */
+.dark-mode .contact-form label {
+    color: #bb86fc; /* Accent color for labels */
+}
+
+.dark-mode .contact-form input,
+.dark-mode .contact-form textarea {
+    background: #1e1e1e; /* Dark input background */
+    color: #e0e0e0; /* Light text */
+    border: 1px solid #333; /* Subtle border */
+}
+
+.dark-mode .contact-form button {
+    background: #bb86fc; /* Purple button */
+    color: #121212; /* Dark text for contrast */
+    border: 1px solid #bb86fc; /* Subtle border */
+}
+
+.dark-mode .contact-form button:hover {
+    background: #9c27b0; /* Darker purple on hover */
+    border-color: #9c27b0;
+}
+
 /* Dark Mode Toggle Button */
 .dark-mode-toggle {
     position: fixed;
     bottom: 20px;
     right: 20px;
     padding: 10px 20px;
-    background: #4CAF50;
-    color: #fff;
+    background: #bb86fc; /* Purple button */
+    color: #121212; /* Dark text for contrast */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
     z-index: 1000;
+    transition: background 0.3s ease;
 }
 
 .dark-mode-toggle:hover {
-    background: #45a049;
+    background: #9c27b0; /* Darker purple on hover */
 }
-
 /* How It Works Section */
 .how-it-works {
     padding: 80px 0;
