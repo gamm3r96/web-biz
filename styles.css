@@ -1,0 +1,449 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav ul li a:hover {
+    color: #4CAF50;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    padding: 100px 0;
+    background: url('background-3d.jpg') no-repeat center center/cover;
+    color: #fff;
+    z-index: 1;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.hero-content, .hero-image {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    background: #fff;
+    color: #4CAF50;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+.animated-scooter {
+    width: 100%;
+    animation: scooter-move 5s infinite alternate ease-in-out;
+}
+
+@keyframes scooter-move {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Fade-In Animation */
+.animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode .header,
+.dark-mode .footer {
+    background: #1e1e1e;
+}
+
+.dark-mode .hero {
+    background: linear-gradient(135deg, #1b5e20, #1565c0);
+}
+
+.dark-mode .btn-primary {
+    background: #e0e0e0;
+    color: #1b5e20;
+}
+
+.dark-mode .btn-secondary {
+    background: #1b5e20;
+    color: #e0e0e0;
+}
+
+.dark-mode .step,
+.dark-mode .plan {
+    background: #2c2c2c;
+    color: #e0e0e0;
+}
+
+.dark-mode .step:hover,
+.dark-mode .plan:hover {
+    transform: translateY(-10px);
+}
+
+/* Dark Mode Base Styles */
+.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text for readability */
+}
+
+/* Header and Footer in Dark Mode */
+.dark-mode .header,
+.dark-mode .footer {
+    background: #1e1e1e; /* Slightly lighter than the main background */
+    color: #e0e0e0; /* Light text */
+}
+
+.dark-mode .header .logo {
+    color: #bb86fc; /* Accent color for branding */
+}
+
+.dark-mode .nav ul li a {
+    color: #bb86fc; /* Purple accent for navigation links */
+}
+
+.dark-mode .nav ul li a:hover {
+    color: #ffffff; /* Bright white on hover */
+}
+
+/* Hero Section in Dark Mode */
+.dark-mode .hero {
+    background: linear-gradient(135deg, #1b5e20, #0d47a1); /* Gradient with darker tones */
+    color: #ffffff; /* White text for contrast */
+}
+
+.dark-mode .hero-content h2 {
+    color: #ffffff; /* Bright white for headings */
+}
+
+.dark-mode .btn-primary {
+    background: #bb86fc; /* Purple button */
+    color: #121212; /* Dark text for contrast */
+    border: 1px solid #bb86fc; /* Subtle border */
+}
+
+.dark-mode .btn-primary:hover {
+    background: #9c27b0; /* Darker purple on hover */
+    border-color: #9c27b0;
+}
+
+/* How It Works Section in Dark Mode */
+.dark-mode .step {
+    background: #2c2c2c; /* Dark card background */
+    color: #e0e0e0; /* Light text */
+    border: 1px solid #333; /* Subtle border for separation */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Softer shadow */
+}
+
+.dark-mode .step h3 {
+    color: #bb86fc; /* Accent color for headings */
+}
+
+.dark-mode .step p {
+    color: #e0e0e0; /* Light text */
+}
+
+/* Pricing Section in Dark Mode */
+.dark-mode .plan {
+    background: #2c2c2c; /* Dark card background */
+    color: #e0e0e0; /* Light text */
+    border: 1px solid #333; /* Subtle border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Softer shadow */
+}
+
+.dark-mode .plan h3 {
+    color: #bb86fc; /* Accent color for headings */
+}
+
+.dark-mode .plan .price {
+    color: #bb86fc; /* Accent color for pricing */
+}
+
+.dark-mode .btn-secondary {
+    background: #bb86fc; /* Purple button */
+    color: #121212; /* Dark text for contrast */
+    border: 1px solid #bb86fc; /* Subtle border */
+}
+
+.dark-mode .btn-secondary:hover {
+    background: #9c27b0; /* Darker purple on hover */
+    border-color: #9c27b0;
+}
+
+/* Contact Form in Dark Mode */
+.dark-mode .contact-form label {
+    color: #bb86fc; /* Accent color for labels */
+}
+
+.dark-mode .contact-form input,
+.dark-mode .contact-form textarea {
+    background: #1e1e1e; /* Dark input background */
+    color: #e0e0e0; /* Light text */
+    border: 1px solid #333; /* Subtle border */
+}
+
+.dark-mode .contact-form button {
+    background: #bb86fc; /* Purple button */
+    color: #121212; /* Dark text for contrast */
+    border: 1px solid #bb86fc; /* Subtle border */
+}
+
+.dark-mode .contact-form button:hover {
+    background: #9c27b0; /* Darker purple on hover */
+    border-color: #9c27b0;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background: #bb86fc; /* Purple button */
+    color: #121212; /* Dark text for contrast */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    background: #9c27b0; /* Darker purple on hover */
+}
+/* How It Works Section */
+.how-it-works {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.step {
+    background: #f4f4f4;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-10px);
+}
+
+.step h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.step p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Pricing Section */
+.pricing {
+    padding: 80px 0;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.plan {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.plan:hover {
+    transform: translateY(-10px);
+}
+
+.plan h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.plan .price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.plan ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.plan ul li {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.btn-secondary {
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.btn-secondary:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
+}
+
+.contact-form label {
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.contact-form button:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+body, .header, .footer {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
