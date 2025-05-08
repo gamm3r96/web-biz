@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuickDrop - Your Local Delivery Service</title>
+    <title>QuickDrop - Modern Delivery Service</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Canvas for 3D Animation -->
+    <canvas id="webgl"></canvas>
+
     <!-- Header Section -->
     <header>
         <div class="container">
             <h1>QuickDrop</h1>
-            <p>Your Local Grocery & Takeout Delivery Service</p>
+            <p>Your Modern Grocery & Takeout Delivery Service</p>
         </div>
     </header>
 
@@ -30,8 +33,8 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <h2>Get Groceries & Takeout Delivered to Your Doorstep</h2>
-            <p>Fast, reliable, and affordable delivery service in your neighborhood.</p>
+            <h2>Get Groceries & Takeout Delivered in Style</h2>
+            <p>Experience the future of delivery with our 3D-powered service.</p>
             <button onclick="window.location.href='#contact'">Order Now</button>
         </div>
     </section>
@@ -107,5 +110,9 @@
             <p>&copy; 2023 QuickDrop. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Three.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
