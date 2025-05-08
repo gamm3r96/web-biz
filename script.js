@@ -67,3 +67,12 @@ darkModeToggle.addEventListener('click', () => {
 
 // Add CSS Classes Dynamically
 document.querySelectorAll('.step, .plan, .hero-content').forEach(el => el.classList.add('animate'));
+
+// Dynamic price 
+document.getElementById('monthly').addEventListener('click', () => {
+    document.querySelector('.price').textContent = '$10/month';
+});
+
+document.getElementById('one-time').addEventListener('click', () => {
+    document.querySelector('.price').textContent = '$5 per delivery';
+});
