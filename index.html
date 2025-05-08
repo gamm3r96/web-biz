@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Canvas for 3D Animation -->
-    <canvas id="webgl"></canvas>
-
     <!-- Header Section -->
     <header>
         <div class="container">
@@ -34,8 +31,12 @@
     <section id="home" class="hero">
         <div class="container">
             <h2>Get Groceries & Takeout Delivered in Style</h2>
-            <p>Experience the future of delivery with our 3D-powered service.</p>
+            <p>Experience fast, reliable, and affordable delivery in your neighborhood.</p>
             <button onclick="window.location.href='#contact'">Order Now</button>
+        </div>
+        <!-- Animated Delivery Scooter -->
+        <div class="delivery-animation">
+            <img src="scooter.png" alt="Delivery Scooter" class="scooter">
         </div>
     </section>
 
@@ -110,10 +111,5 @@
             <p>&copy; 2023 QuickDrop. All rights reserved.</p>
         </div>
     </footer>
-
-    <!-- Three.js Script -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>
