@@ -1,39 +1,69 @@
-// Set up Three.js scene
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('webgl') });
+// Smooth Scrolling for Navigation Links
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1); // Remove the '#' from href
+        const targetElement = document.getElementById(targetId);
 
-renderer.setSize(window.innerWidth, window.innerHeight);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 60, // Adjust for sticky header
+                behavior: 'smooth'
+            });
+        }
+    });
+});
 
-// Add a rotating cube
-const geometry = new THREE.BoxGeometry();
-const material = new THREE.MeshStandardMaterial({ color: 0x4CAF50 });
-const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
+// Form Validation
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
 
-// Add lighting
-const light = new THREE.DirectionalLight(0xffffff, 1);
-light.position.set(5, 5, 5).normalize();
-scene.add(light);
+        if (!name || !email || !message) {
+            e.preventDefault();
+            alert('Please fill out all fields.');
+        } else if (!validateEmail(email)) {
+            e.preventDefault();
+            alert('Please enter a valid email address.');
+        } else {
+            alert('Thank you for contacting us!');
+        }
+    });
 
-camera.position.z = 5;
-
-// Animation loop
-function animate() {
-    requestAnimationFrame(animate);
-
-    // Rotate the cube
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
-
-    renderer.render(scene, camera);
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+    }
 }
 
-animate();
-
-// Handle window resize
-window.addEventListener('resize', () => {
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
+// Dynamic Animations (Fade-In on Scroll)
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, {
+    threshold: 0.2 // Trigger animation when 20% of the element is visible
 });
+
+// Observe all elements with the class "animate"
+document.querySelectorAll('.animate').forEach(element => {
+    observer.observe(element);
+});
+
+// Dark Mode Toggle
+const darkModeToggle = document.createElement('button');
+darkModeToggle.textContent = 'Toggle Dark Mode';
+darkModeToggle.classList.add('dark-mode-toggle');
+document.body.appendChild(darkModeToggle);
+
+darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+});
+
+// Add CSS Classes Dynamically
+document.querySelectorAll('.step, .plan, .hero-content').forEach(el => el.classList.add('animate'));
