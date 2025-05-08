@@ -102,6 +102,73 @@ body {
     }
 }
 
+/* Fade-In Animation */
+.animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode .header,
+.dark-mode .footer {
+    background: #1e1e1e;
+}
+
+.dark-mode .hero {
+    background: linear-gradient(135deg, #1b5e20, #1565c0);
+}
+
+.dark-mode .btn-primary {
+    background: #e0e0e0;
+    color: #1b5e20;
+}
+
+.dark-mode .btn-secondary {
+    background: #1b5e20;
+    color: #e0e0e0;
+}
+
+.dark-mode .step,
+.dark-mode .plan {
+    background: #2c2c2c;
+    color: #e0e0e0;
+}
+
+.dark-mode .step:hover,
+.dark-mode .plan:hover {
+    transform: translateY(-10px);
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    z-index: 1000;
+}
+
+.dark-mode-toggle:hover {
+    background: #45a049;
+}
+
 /* How It Works Section */
 .how-it-works {
     padding: 80px 0;
